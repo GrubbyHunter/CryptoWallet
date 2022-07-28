@@ -6,18 +6,11 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import * as React from 'react'
+import { NavigationContainer } from "@react-navigation/native"
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Image, StyleSheet, Button } from 'react-native';
 
 import {
   Colors,
@@ -33,20 +26,53 @@ import Wallet from "../pages/Wallet"
 import NFT from "../pages/NFT"
 
 const Stack = createNativeStackNavigator()
+const Tab = createBottomTabNavigator();
+
+const LogoTitle = () => {
+  return (
+    <Image
+      style={{ width: 50, height: 50 }}
+      source={require("../assets/svg/home.png")}
+    />
+  );
+}
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Wallet" component={Wallet} />
-        <Stack.Screen name="NFT" component={NFT} />
-        <Stack.Screen name="Marketing" component={Marketing} />
-        <Stack.Screen name="News" component={News} />
-        <Stack.Screen name="My" component={My} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="News" component={News} />
+        <Tab.Screen name="My" component={My} />
+        <Tab.Screen name="NFT" component={NFT} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
+// const App = () => {
+//   return Home()
+
+//   // return (
+//   //   <NavigationContainer>
+//   //     <Stack.Navigator initialRouteName="Wallet">
+//   //       <Stack.Screen
+//   //         name="Wallet"
+//   //         component={Wallet}
+//   //         options={{
+//   //           headerLeft: (props) => <LogoTitle {...props} />,
+//   //           headerRight: () => (
+//   //             <Button
+//   //               onPress={() => alert('This is a button!')}
+//   //               title="Info"
+//   //               color="#fff"
+//   //             />
+//   //           ),
+//   //         }}
+//   //       />
+//   //       <Stack.Screen name="Marketing" component={Marketing} />
+//   //     </Stack.Navigator>
+//   //   </NavigationContainer>
+//   //   );
+// }
 
 const styles = StyleSheet.create({
   sectionContainer: {
