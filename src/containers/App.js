@@ -6,10 +6,12 @@
  * @flow strict-local
  */
 
-import * as React from 'react'
+import * as React from 'react';
+import 'react-native-gesture-handler';
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Image, StyleSheet, Button } from 'react-native';
 
 import {
@@ -27,6 +29,7 @@ import NFT from "../pages/NFT"
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 const LogoTitle = () => {
   return (
@@ -37,42 +40,43 @@ const LogoTitle = () => {
   );
 }
 
+const Home = () => {
+  return (
+    // <Tab.Navigator>
+    //   <Tab.Screen name="News" component={News} />
+    //   <Tab.Screen name="My" component={My} />
+    //   <Tab.Screen name="NFT" component={NFT} />
+    // </Tab.Navigator>
+    <Drawer.Navigator>
+      <Drawer.Screen name="News" component={News} />
+      <Drawer.Screen name="My" component={My} />
+      <Stack.Screen name="NFT" component={NFT} />
+    </Drawer.Navigator>
+  );
+}
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="News" component={News} />
-        <Tab.Screen name="My" component={My} />
-        <Tab.Screen name="NFT" component={NFT} />
-      </Tab.Navigator>
+      <Stack.Navigator initialRouteName="Wallet">
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerLeft: (props) => <LogoTitle {...props} />,
+            headerRight: () => (
+              <Button
+                onPress={() => alert('This is a button!')}
+                title="Info"
+                color="#fff"
+              />
+            ),
+          }}
+        />
+        <Stack.Screen name="Marketing" component={Marketing} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
-// const App = () => {
-//   return Home()
-
-//   // return (
-//   //   <NavigationContainer>
-//   //     <Stack.Navigator initialRouteName="Wallet">
-//   //       <Stack.Screen
-//   //         name="Wallet"
-//   //         component={Wallet}
-//   //         options={{
-//   //           headerLeft: (props) => <LogoTitle {...props} />,
-//   //           headerRight: () => (
-//   //             <Button
-//   //               onPress={() => alert('This is a button!')}
-//   //               title="Info"
-//   //               color="#fff"
-//   //             />
-//   //           ),
-//   //         }}
-//   //       />
-//   //       <Stack.Screen name="Marketing" component={Marketing} />
-//   //     </Stack.Navigator>
-//   //   </NavigationContainer>
-//   //   );
-// }
 
 const styles = StyleSheet.create({
   sectionContainer: {
