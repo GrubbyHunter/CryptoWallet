@@ -42,39 +42,55 @@ const LogoTitle = () => {
 
 const Home = () => {
   return (
-    // <Tab.Navigator>
-    //   <Tab.Screen name="News" component={News} />
-    //   <Tab.Screen name="My" component={My} />
-    //   <Tab.Screen name="NFT" component={NFT} />
-    // </Tab.Navigator>
-    <Drawer.Navigator>
-      <Drawer.Screen name="News" component={News} />
-      <Drawer.Screen name="My" component={My} />
-      <Stack.Screen name="NFT" component={NFT} />
-    </Drawer.Navigator>
+    <Tab.Navigator>
+      <Tab.Screen name="News" component={News} />
+      <Tab.Screen name="My" component={My} />
+      <Tab.Screen name="NFT" component={NFT} />
+    </Tab.Navigator>
+    // <Drawer.Navigator>
+    //   <Drawer.Screen name="News" component={News} />
+    //   <Drawer.Screen name="My" component={My} />
+    //   <Stack.Screen name="NFT" component={NFT} />
+    // </Drawer.Navigator>
   );
 }
+function HomeTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="NFT" component={NFT} />
+      <Tab.Screen name="Marketing" component={Marketing} />
+      <Tab.Screen name="Wallet" component={Wallet} />
+    </Tab.Navigator>
+  );
+}
+
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Wallet">
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerLeft: (props) => <LogoTitle {...props} />,
-            headerRight: () => (
-              <Button
-                onPress={() => alert('This is a button!')}
-                title="Info"
-                color="#fff"
-              />
-            ),
-          }}
-        />
-        <Stack.Screen name="Marketing" component={Marketing} />
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeTabs} />
+        <Stack.Screen name="My" component={My} />
       </Stack.Navigator>
     </NavigationContainer>
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName="Wallet">
+    //     <Stack.Screen
+    //       name="Home"
+    //       component={Home}
+    //       options={{
+    //         headerLeft: (props) => <LogoTitle {...props} />,
+    //         headerRight: () => (
+    //           <Button
+    //             onPress={() => alert('This is a button!')}
+    //             title="Info"
+    //             color="#fff"
+    //           />
+    //         ),
+    //       }}
+    //     />
+    //     <Stack.Screen name="Marketing" component={Marketing} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 }
 
