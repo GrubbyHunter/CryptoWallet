@@ -1,5 +1,4 @@
 import { Text, View } from 'react-native'
-
 import React from 'react';
 
 const NFTPage = () => {
@@ -9,5 +8,9 @@ const NFTPage = () => {
     </View>
   );
 }
-
+ImagePicker.openPicker({
+  multiple: true
+}).then(images => {
+  console.log(images);
+});
 export default NFTPage
