@@ -32,12 +32,9 @@ import React from 'react'
 import Wallet from "../pages/Wallet"
 
 const theme = createTheme({
-  lightColors: {
+  colors: {
     primary: '#0052D9',
-  },
-  darkColors: {
-    primary: '#000',
-  },
+  }
 })
 
 const App = () => {
