@@ -21,6 +21,8 @@ import {
   View,
   useColorScheme,
 } from 'react-native'
+// 全局主题设置
+import { ThemeProvider, createTheme } from "@rneui/themed"
 
 import Marketing from "../pages/Marketing"
 import My from "../pages/My"
@@ -29,9 +31,20 @@ import News from "../pages/News"
 import React from 'react'
 import Wallet from "../pages/Wallet"
 
+const theme = createTheme({
+  lightColors: {
+    primary: '#0052D9',
+  },
+  darkColors: {
+    primary: '#000',
+  },
+})
+
 const App = () => {
   return (
-    <Wallet></Wallet>
+    <ThemeProvider theme={theme}>
+      <Wallet></Wallet>
+    </ThemeProvider>
   );
 }
 
