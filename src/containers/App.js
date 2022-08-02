@@ -21,7 +21,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native'
-// 全局主题设置
+// 全局主题
 import { ThemeProvider, createTheme } from "@rneui/themed"
 
 import Marketing from "../pages/Marketing"
