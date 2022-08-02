@@ -33,7 +33,7 @@ import Wallet from "../pages/Wallet"
 
 const theme = createTheme({
   colors: {
-    primary: '#0052D9',
+    primary: '#0052D9'
   }
 })
 
