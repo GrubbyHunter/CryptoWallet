@@ -6,13 +6,6 @@
  * @flow strict-local
  */
 import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen'
-import {
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -24,13 +17,17 @@ import {
 // 全局主题
 import { ThemeProvider, createTheme } from "@rneui/themed"
 
-import Marketing from "../pages/Marketing"
-import My from "../pages/My"
-import NFT from "../pages/NFT"
-import News from "../pages/News"
+import Marketing from "./views/Marketing"
+import My from "./views/My"
+import NFT from "./views/NFT"
+import { NavigationContainer } from '@react-navigation/native'
+import News from "./views/News"
 import React from 'react'
-import Wallet from "../pages/Wallet"
+import Wallet from "./views/Wallet"
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
+const Tab = createBottomTabNavigator()
 const theme = createTheme({
   colors: {
     primary: '#0052D9'
@@ -40,7 +37,12 @@ const theme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Wallet></Wallet>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Wallet" component={Wallet} />
+          <Tab.Screen name="Marketing" component={Marketing} />
+        </Tab.Navigator>
+      </NavigationContainer>
     </ThemeProvider>
   );
 }

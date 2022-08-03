@@ -1,24 +1,24 @@
 module.exports = {
-  root: true,
-  extends: '@react-native-community',
-  env: {
-    browser: true,
-    es2021: true
-  },
-  extends: ['eslint:recommended', 'airbnb-base'],
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [['@', './src']],
-        extensions: ['.js', '.jsx'],
-      },
-    },
-  },
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  rules: {
+	root: true,
+	extends: '@react-native-community',
+	env: {
+		browser: true,
+		es2021: true
+	},
+	extends: ['eslint:recommended', 'airbnb-base'],
+	settings: {
+		'import/resolver': {
+			alias: {
+				map: [['@', './src']],
+				extensions: ['.js', '.jsx'],
+			},
+		},
+	},
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+	},
+	rules: {
 		"no-console": "off",
 		"no-debugger": "off",
 		"no-continue": ["off"],
@@ -63,11 +63,12 @@ module.exports = {
 		quotes: ["error", "double"],
 		// 强制不使用分号结尾
 		semi: ["error", "never"],
-		"sort-imports": ["error", {
-			ignoreCase: true, // 保持导入import的顺序
-			ignoreDeclarationSort: true,
-			ignoreMemberSort: true,
-			memberSyntaxSortOrder: ["none", "all", "single", "multiple"]
-		}]
+		// "sort-imports": ["error", {
+		// 	ignoreCase: true, // 保持导入import的顺序
+		// 	ignoreDeclarationSort: true,
+		// 	ignoreMemberSort: true,
+		// 	memberSyntaxSortOrder: ["none", "all", "single", "multiple"]
+		// }]
+
 	}
 };
