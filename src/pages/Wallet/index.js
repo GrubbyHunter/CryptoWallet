@@ -4,11 +4,11 @@ import { Button } from '@rneui/themed'
 import React from 'react'
 
 const RaisedButton = (props) => <Button raised {...props} title="确认" />;
-const WalletPage = () => {
+const WalletPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>WalletPage</Text>
-      <RaisedButton></RaisedButton>
+      <Text>WalletDetail</Text>
+      <RaisedButton nPress={() => navigation.navigate('WalletDetail')}></RaisedButton>
     </View>
   );
 }

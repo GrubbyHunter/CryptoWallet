@@ -1,13 +1,11 @@
 import { Text, View } from 'react-native'
 
-import React from 'react'
-
-const NFTPage = () => {
+const WalletPage = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>NFTPage1</Text>
+      <Text>WalletDetail</Text>
     </View>
-  )
+  );
 }
 
-export default NFTPage
+export default WalletDetailPage
