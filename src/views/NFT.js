@@ -2,12 +2,12 @@ import { Text, View } from 'react-native'
 
 import React from 'react'
 
-const NewsPage = () => {
+const NFTPage = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>NewsPage</Text>
+      <Text>NFTPage</Text>
     </View>
   )
 }
 
-export default NewsPage
+export default NFTPage
