@@ -1,6 +1,7 @@
 // 不需要检查拼写是否错误的单词
 {
   "ignoreWords": [
-    "rneui"
+    "rneui",
+    "CryptoWallet"
   ]
 }
