@@ -64,15 +64,49 @@ const TAB_CONFIG = [
   }
 ]
 
+const showTab = (routeName) => {
+  return [
+    "Wallet-List",
+    "My-List",
+    "News-List",
+    "NFT-List",
+    "Marketing-List"
+  ].indexOf(routeName) > -1
+}
 const App = () => {
+  const routeNameRef = React.useRef()
+  const navigationRef = React.useRef()
+  const [tabVisible, setTabVisible] = React.useState()
+
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
+        <NavigationContainer
+          ref={navigationRef}
+          onReady={() =>
+            (routeNameRef.current = navigationRef.current.getCurrentRoute().name)
+          }
+          onStateChange={() => {
+            const currentRouteName = navigationRef.current.getCurrentRoute().name;
+
+            if (currentRouteName) {
+              setTabVisible(showTab(currentRouteName))
+            }
+
+            // Save the current route name for later comparision
+            routeNameRef.current = currentRouteName;
+          }}
+        >
           <Tab.Navigator
-            screenOptions={{
-              activeTintColor: '#2C3167',
-            }}>
+            screenOptions={
+              ({ navigation, route }) => ({
+                activeTintColor: '#2C3167',
+                headerShown: false, // in index page,not show header
+                tabBarShowLabel: true, // show title
+                // only main screen show zhe bottom tab
+                tabBarStyle: { display: tabVisible ? "flex" : "none" }
+              })
+            }>
             {
               TAB_CONFIG.map((item, index) => {
                 return (

@@ -9,8 +9,10 @@ const MarketingView = () => {
   // default show first screen
   return (
     <MarketingStack.Navigator>
-      <MarketingStack.Screen name="Marketing-List" component={List} />
-      <MarketingStack.Screen name="Marketing-Details" component={Detail} />
+      <MarketingStack.Screen name="Marketing-List" component={List} options={{ headerShown: false }} />
+      <MarketingStack.Group>
+        <MarketingStack.Screen name="Marketing-Details" component={Detail} />
+      </MarketingStack.Group>
     </MarketingStack.Navigator>
   )
 }
