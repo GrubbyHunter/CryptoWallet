@@ -5,13 +5,12 @@ import React from 'react'
 
 const WalletStack = createNativeStackNavigator()
 
-const WalletView = () => {
-  // default show first screen
+const WalletView = ({ navigation, route }) => {
   return (
     <WalletStack.Navigator>
       <WalletStack.Screen options={{ headerShown: false }}
         name="Wallet-List" component={List} />
-      <WalletStack.Group >
+      <WalletStack.Group>
         <WalletStack.Screen name="Wallet-Details" component={Detail} />
       </WalletStack.Group>
     </WalletStack.Navigator >
