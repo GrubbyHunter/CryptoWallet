@@ -1,13 +1,10 @@
-import { Text, View } from 'react-native'
+import IndexPage from "../pages/My/index"
+import React from 'react'
 
-import React from 'react';
-
-const MyPage = () => {
+const WalletView = () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>MyPage</Text>
-    </View>
+    <IndexPage></IndexPage>
   );
 }
 
-export default MyPage
+export default WalletView
