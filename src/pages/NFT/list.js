@@ -1,15 +1,15 @@
 import { Text, View } from 'react-native'
 import { Button } from '@rneui/themed'
 import React from 'react'
-const RaisedButton = (props) => <Button raised {...props} title="goto Wallet Detail" />;
+const RaisedButton = (props) => <Button raised {...props} title="goto NFT Detail" />;
 
-const WalletListPage = () => {
+const NFTListPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>WalletList</Text>
-      <RaisedButton onPress={() => navigation.navigate('Wallet-List')}></RaisedButton>
+      <Text>NFTList</Text>
+      <RaisedButton onPress={() => navigation.navigate('NFT-List')}></RaisedButton>
     </View>
   );
 }
 
-export default WalletListPage
+export default NFTListPage
