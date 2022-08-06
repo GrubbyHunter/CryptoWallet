@@ -9,9 +9,12 @@ const WalletView = () => {
   // default show first screen
   return (
     <WalletStack.Navigator>
-      <WalletStack.Screen name="Wallet-List" component={List} />
-      <WalletStack.Screen name="Wallet-Details" component={Detail} />
-    </WalletStack.Navigator>
+      <WalletStack.Screen options={{ headerShown: false }}
+        name="Wallet-List" component={List} />
+      <WalletStack.Group >
+        <WalletStack.Screen name="Wallet-Details" component={Detail} />
+      </WalletStack.Group>
+    </WalletStack.Navigator >
   )
 }
 

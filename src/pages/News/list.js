@@ -7,7 +7,7 @@ const NewsListPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>NewsList</Text>
-      <RaisedButton onPress={() => navigation.navigate("News-List")}></RaisedButton>
+      <RaisedButton onPress={() => navigation.navigate("News-Details")}></RaisedButton>
     </View >
   );
 }

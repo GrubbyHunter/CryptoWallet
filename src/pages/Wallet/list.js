@@ -7,7 +7,7 @@ const WalletListPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>WalletList</Text>
-      <RaisedButton onPress={() => navigation.navigate('Wallet-List')}></RaisedButton>
+      <RaisedButton onPress={() => navigation.navigate('Wallet-Details')}></RaisedButton>
     </View>
   );
 }
