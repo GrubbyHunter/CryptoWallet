@@ -1,12 +1,12 @@
 import { Text, View } from 'react-native'
 import React from 'react'
 
-const WalletDetailPage = () => {
+const MyDetailPage = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>WalletDetail</Text>
+      <Text>MyDetail</Text>
     </View>
   );
 }
 
-export default WalletDetailPage
+export default MyDetailPage
