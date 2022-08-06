@@ -65,14 +65,26 @@ const TAB_CONFIG = [
 ]
 
 const App = () => {
+  console.log("--------------App Start--------------")
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
           <Tab.Navigator
-            screenOptions={{
-              activeTintColor: '#2C3167',
-            }}>
+            screenOptions={
+              ({ navigation }) => ({
+                activeTintColor: '#2C3167',
+                headerShown: false, // in index page,not show header
+                tabBarShowLabel: true, // show title
+                tabBarStyle: () => {
+                  console.log("navigation =", navigation)
+
+                  if (navigation) {
+                    return { display: "none" }
+                  }
+                  return { display: "block" }
+                }
+              })}>
             {
               TAB_CONFIG.map((item, index) => {
                 return (
