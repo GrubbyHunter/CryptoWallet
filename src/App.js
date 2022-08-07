@@ -76,7 +76,7 @@ const showTab = (routeName) => {
 const App = () => {
   const routeNameRef = React.useRef()
   const navigationRef = React.useRef()
-  const [tabVisible, setTabVisible] = React.useState()
+  const [tabVisible, setTabVisible] = React.useState(true)
 
   return (
     <SafeAreaProvider>
@@ -87,8 +87,8 @@ const App = () => {
             (routeNameRef.current = navigationRef.current.getCurrentRoute().name)
           }
           onStateChange={() => {
+            //const previousRouteName = routeNameRef.current;
             const currentRouteName = navigationRef.current.getCurrentRoute().name;
-
             if (currentRouteName) {
               setTabVisible(showTab(currentRouteName))
             }
