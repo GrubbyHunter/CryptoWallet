@@ -7,7 +7,7 @@ const MyListPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>MyList</Text>
-      <RaisedButton onPress={() => navigation.navigate('My-Details')}></RaisedButton>
+      <RaisedButton onPress={() => navigation.navigate('MyDetails')}></RaisedButton>
     </View>
   );
 }

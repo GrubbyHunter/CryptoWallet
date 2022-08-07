@@ -66,18 +66,18 @@ const TAB_CONFIG = [
 
 const showTab = (routeName) => {
   return [
-    "Wallet-List",
-    "My-List",
-    "News-List",
-    "NFT-List",
-    "Marketing-List"
+    "WalletList",
+    "MyList",
+    "NewsList",
+    "NFTList",
+    "MarketingList"
   ].indexOf(routeName) > -1
 }
 const App = () => {
   const routeNameRef = React.useRef()
   const navigationRef = React.useRef()
   const [tabVisible, setTabVisible] = React.useState(true)
-
+  console.log("-------aa start-------")
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>

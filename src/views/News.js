@@ -9,9 +9,9 @@ const NewsView = () => {
   // default show first screen
   return (
     <NewsStack.Navigator>
-      <NewsStack.Screen name="News-List" component={List} options={{ headerShown: false }} />
+      <NewsStack.Screen name="NewsList" component={List} options={{ headerShown: false }} />
       <NewsStack.Group>
-        <NewsStack.Screen name="News-Details" component={Detail} />
+        <NewsStack.Screen name="NewsDetails" component={Detail} />
       </NewsStack.Group>
     </NewsStack.Navigator>
   )

@@ -9,9 +9,9 @@ const MyView = () => {
   // default show first screen
   return (
     <MyStack.Navigator>
-      <MyStack.Screen name="My-List" component={List} options={{ headerShown: false }} />
+      <MyStack.Screen name="MyList" component={List} options={{ headerShown: false }} />
       <MyStack.Group>
-        <MyStack.Screen name="My-Details" component={Detail} />
+        <MyStack.Screen name="MyDetails" component={Detail} />
       </MyStack.Group>
     </MyStack.Navigator>
   )

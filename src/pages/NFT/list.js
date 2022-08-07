@@ -7,7 +7,7 @@ const NFTListPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>NFTList</Text>
-      <RaisedButton onPress={() => navigation.navigate('NFT-Details')}></RaisedButton>
+      <RaisedButton onPress={() => navigation.navigate('NFTDetails')}></RaisedButton>
     </View>
   );
 }

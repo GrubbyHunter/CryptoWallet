@@ -9,9 +9,9 @@ const NFTView = () => {
   // default show first screen
   return (
     <NFTStack.Navigator>
-      <NFTStack.Screen name="NFT-List" component={List} options={{ headerShown: false }} />
+      <NFTStack.Screen name="NFTList" component={List} options={{ headerShown: false }} />
       <NFTStack.Group>
-        <NFTStack.Screen name="NFT-Details" component={Detail} />
+        <NFTStack.Screen name="NFTDetails" component={Detail} />
       </NFTStack.Group>
     </NFTStack.Navigator>
   )

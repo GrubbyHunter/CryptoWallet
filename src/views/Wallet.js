@@ -9,9 +9,9 @@ const WalletView = ({ navigation, route }) => {
   return (
     <WalletStack.Navigator>
       <WalletStack.Screen options={{ headerShown: false }}
-        name="Wallet-List" component={List} />
+        name="WalletList" component={List} />
       <WalletStack.Group>
-        <WalletStack.Screen name="Wallet-Details" component={Detail} />
+        <WalletStack.Screen name="WalletDetails" component={Detail} />
       </WalletStack.Group>
     </WalletStack.Navigator >
   )

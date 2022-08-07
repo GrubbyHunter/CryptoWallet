@@ -7,7 +7,7 @@ const MarketingListPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>MarketingList</Text>
-      <RaisedButton onPress={() => navigation.navigate('Marketing-Details')}></RaisedButton>
+      <RaisedButton onPress={() => navigation.navigate('MarketingDetails')}></RaisedButton>
     </View>
   );
 }

@@ -14,7 +14,7 @@ const WalletListPage = ({ navigation }) => {
         // navigation.navigate('My', {
         //   screen: 'My-Details'
         // });
-        navigation.navigate('Wallet-Details');
+        navigation.navigate('WalletDetails');
       }}></RaisedButton>
     </View>
   );
