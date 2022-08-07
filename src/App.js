@@ -66,17 +66,18 @@ const TAB_CONFIG = [
 
 const showTab = (routeName) => {
   return [
-    "Wallet-List",
-    "My-List",
-    "News-List",
-    "NFT-List",
-    "Marketing-List"
+    "WalletIndex",
+    "MyIndex",
+    "NewsIndex",
+    "NFTIndex",
+    "MarketingIndex"
   ].indexOf(routeName) > -1
 }
 const App = () => {
   const routeNameRef = React.useRef()
   const navigationRef = React.useRef()
   const [tabVisible, setTabVisible] = React.useState(true)
+  console.log("-------aa start-------")
 
   return (
     <SafeAreaProvider>
@@ -110,13 +111,15 @@ const App = () => {
             {
               TAB_CONFIG.map((item, index) => {
                 return (
-                  <Tab.Screen key={index} name={item.name} component={item.component}
+                  <Tab.Screen key={index} name={item.name}
                     options={{
                       tabBarIcon: ({ focused }) => (
                         <Image source={focused ? item.selectIcon : item.icon} style={[styles.iconImage]} />
                       )
                     }}
-                  />
+                  >
+                    {props => <item.component  {...props} />}
+                  </Tab.Screen>
                 )
               })
             }

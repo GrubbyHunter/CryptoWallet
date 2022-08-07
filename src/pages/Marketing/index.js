@@ -3,13 +3,13 @@ import { Button } from '@rneui/themed'
 import React from 'react'
 const RaisedButton = (props) => <Button raised {...props} title="goto Marketing Detail" />;
 
-const MarketingListPage = ({ navigation }) => {
+const MarketingIndexPage = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>MarketingList</Text>
-      <RaisedButton onPress={() => navigation.navigate('Marketing-Details')}></RaisedButton>
+      <Text>MarketingIndex</Text>
+      <RaisedButton onPress={() => navigation.navigate('MarketingDetail')}></RaisedButton>
     </View>
   );
 }
 
-export default MarketingListPage
+export default MarketingIndexPage
