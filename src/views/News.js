@@ -1,5 +1,5 @@
-import List from "../pages/News/list"
-import Detail from "../pages/News/detail"
+import NewsIndex from "../pages/News"
+import NewsDetail from "../pages/News/detail"
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
 
@@ -9,9 +9,13 @@ const NewsView = () => {
   // default show first screen
   return (
     <NewsStack.Navigator>
-      <NewsStack.Screen name="NewsList" component={List} options={{ headerShown: false }} />
+      <NewsStack.Screen name="NewsIndex" options={{ headerShown: false }} >
+        {props => <NewsIndex  {...props} />}
+      </NewsStack.Screen>
       <NewsStack.Group>
-        <NewsStack.Screen name="NewsDetails" component={Detail} />
+        <NewsStack.Screen name="NewsDetail"  >
+          {props => <NewsDetail  {...props} />}
+        </NewsStack.Screen>
       </NewsStack.Group>
     </NewsStack.Navigator>
   )

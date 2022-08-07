@@ -1,5 +1,5 @@
-import List from "../pages/My/list"
-import Detail from "../pages/My/detail"
+import MyIndex from "../pages/My"
+import MyDetail from "../pages/My/detail"
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
 
@@ -9,9 +9,13 @@ const MyView = () => {
   // default show first screen
   return (
     <MyStack.Navigator>
-      <MyStack.Screen name="MyList" component={List} options={{ headerShown: false }} />
+      <MyStack.Screen name="MyIndex" options={{ headerShown: false }} >
+        {props => <MyIndex  {...props} />}
+      </MyStack.Screen>
       <MyStack.Group>
-        <MyStack.Screen name="MyDetails" component={Detail} />
+        <MyStack.Screen name="MyDetail" >
+          {props => <MyDetail  {...props} />}
+        </MyStack.Screen>
       </MyStack.Group>
     </MyStack.Navigator>
   )
